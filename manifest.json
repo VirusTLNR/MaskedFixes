@@ -1,0 +1,9 @@
+{
+  "name": "MaskedFixes",
+  "version_number": "0.0.1",
+  "website_url": "",
+  "description": "[V69]Currently only fixes 1 bug.. masked being invisible when the player it is mimicking is dead..may add more to this late if other masked bugs appear.. may also have to improve/fix this fix! may only be a temporary fix until someone else picks it up :)",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2100",
+  ]
+}
