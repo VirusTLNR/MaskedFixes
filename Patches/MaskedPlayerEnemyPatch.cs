@@ -6,8 +6,7 @@ namespace MaskedInvisFix.Patches
     [HarmonyPatch(typeof(MaskedPlayerEnemy))]
     public class MaskedPlayerEnemyPatch
     {
-
-        static string oldDebugLine = "";
+        //static string oldDebugLine = "";
         static GameObject tragedyRagdoll = StartOfRound.Instance.playerRagdolls[4]; //ragdoll when killed by Tragedy Mask/Masked.
         static GameObject comedyRagdoll = StartOfRound.Instance.playerRagdolls[5]; //ragdoll when killed by Comedy Mask/Masked.
 
@@ -23,7 +22,8 @@ namespace MaskedInvisFix.Patches
             //Plugin.Logger.LogError("tragedy = " + tragedyRagdoll.name); //just for checking i have the right ragdolls.
             //Plugin.Logger.LogError("comedy = " + comedyRagdoll.name); //just for checking i have the right ragdolls.
             string debugLine = 
-                "allowNoPlayer ?= " + __instance.allowSpawningWithoutPlayer +
+                "allowNoPlayer ? = " + __instance.allowSpawningWithoutPlayer +
+                " | enemyIsEnabled? = " + __instance.enemyEnabled +
                 " | mimickedPlayer = " + (__instance.mimickingPlayer == null ? "null" : __instance.mimickingPlayer) +
                 " | mimickedPlayer.IsPlayerDead = " + (__instance.mimickingPlayer == null ? "null" : __instance.mimickingPlayer.isPlayerDead) +
                 " | mimickedPlayer.deadBody= " + ((__instance.mimickingPlayer == null || __instance.mimickingPlayer.deadBody == null) ? "null" : __instance.mimickingPlayer.deadBody.name) + 
@@ -42,7 +42,7 @@ namespace MaskedInvisFix.Patches
                         __instance.enemyEnabled = false;
                         __instance.EnableEnemyMesh(false, false);
                         Plugin.Logger.LogDebug(debugLine);
-                        Plugin.Logger.LogDebug("(InvisFix)NonMimickedMasked-MaskedMadeInvisible");
+                        Plugin.Logger.LogDebug("NonMimickedMasked-MaskedMadeInvisible");
                         return false;
                     }
                 }
@@ -51,7 +51,7 @@ namespace MaskedInvisFix.Patches
                     __instance.enemyEnabled = true;
                     __instance.EnableEnemyMesh(true, false);
                     Plugin.Logger.LogDebug(debugLine);
-                    Plugin.Logger.LogDebug("(InvisFix)NonMimickedMasked-MaskedMadeVisible");
+                    Plugin.Logger.LogDebug("NonMimickedMasked-MaskedMadeVisible");
                 }
                 return false;
             }
@@ -62,7 +62,7 @@ namespace MaskedInvisFix.Patches
                     __instance.enemyEnabled = false;
                     __instance.EnableEnemyMesh(false, false);
                     Plugin.Logger.LogDebug(debugLine);
-                    Plugin.Logger.LogDebug("(InvisFix)MimickedMasked-MaskedMadeInvisible");
+                    Plugin.Logger.LogDebug("MimickedMasked-MaskedMadeInvisible");
                 }
                 return false;
             }
@@ -71,7 +71,7 @@ namespace MaskedInvisFix.Patches
                 __instance.enemyEnabled = true;
                 __instance.EnableEnemyMesh(true, false);
                 Plugin.Logger.LogDebug(debugLine);
-                Plugin.Logger.LogDebug("(InvisFix)MimickedMasked-MaskedMadeVisible");
+                Plugin.Logger.LogDebug("MimickedMasked-MaskedMadeVisible");
             }
             return false;
         }
