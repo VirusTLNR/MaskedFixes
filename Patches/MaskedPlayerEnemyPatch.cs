@@ -1,7 +1,7 @@
 using HarmonyLib;
 using UnityEngine;
 
-namespace MaskedFixes.Patches
+namespace MaskedInvisFix.Patches
 {
     [HarmonyPatch(typeof(MaskedPlayerEnemy))]
     public class MaskedPlayerEnemyPatch

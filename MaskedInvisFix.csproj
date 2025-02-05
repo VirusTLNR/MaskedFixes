@@ -2,8 +2,8 @@
 
     <!-- BepInEx Properties -->
     <PropertyGroup>
-        <AssemblyName>MaskedFixes</AssemblyName>
-        <Product>MaskedFixes</Product>
+        <AssemblyName>MaskedInvisFix</AssemblyName>
+        <Product>MaskedInvisFix</Product>
         <!-- Change to whatever version you're currently on. -->
         <Version>0.0.1</Version>
 		<!-- Hiding the "Git Commit Hash" from the product version in file properties -->
@@ -13,7 +13,7 @@
     <!-- Project Properties -->
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <RootNamespace>MaskedFixes</RootNamespace>
+        <RootNamespace>MaskedInvisFix</RootNamespace>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
