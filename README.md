@@ -1,4 +1,4 @@
-# MaskedFixes
+# MaskedInvisFix (Used to be called MaskedFixes)
 
 ## Bugs Fixed in this mod
 + [MaskedInvisibilityFix] - when a player died, Masked would often go invisible due to a bug in the vanilla method "MaskedPlayerEnemy.SetVisibilityOfMasked". I have modified this method and the invisibility on player death issue no longer occurs.
@@ -10,5 +10,6 @@ go for it!, just please let people know your patch is the same as mine (or an im
 feel free to let me know on the following places:
 
 Discord: https://discord.com/channels/1168655651455639582/1240985198485573743
+Github: https://github.com/VirusTLNR/MaskedInvisFix/issues
 
-Make sure to let me know you are talking to me about MaskedFixes!
+Make sure to let me know you are talking to me about MaskedInvisFix!
